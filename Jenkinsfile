@@ -24,7 +24,7 @@ pipeline {
                                           usernameVariable: 'WALLET_PUB',
                                           passwordVariable: 'WALLET_PRIV')]) {
           sh 'docker-compose -H localhost:2376 build'
-          sh '''docker-compose -H localhost:2376 run sdk sh -c "npm run test-jenkins && cat /root/.npm/_logs/*" '''
+          sh '''docker-compose -H localhost:2376 run sdk sh -c "npm run test && cat /root/.npm/_logs/*" '''
         }
       }
     }
